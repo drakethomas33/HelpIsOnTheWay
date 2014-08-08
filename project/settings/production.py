@@ -9,7 +9,7 @@ from .base import *
 
 ########## HOST CONFIGURATION
 # See: https://docs.djangoproject.com/en/1.5/releases/1.5/#allowed-hosts-required-in-production
-ALLOWED_HOSTS = ['helpisontheway.co.uk', 'help-is-on-the-way.herokuapp.com']
+ALLOWED_HOSTS = ['www.helpisontheway.co.uk', 'helpisontheway.co.uk', 'help-is-on-the-way.herokuapp.com']
 ########## END HOST CONFIGURATION
 
 ########## EMAIL CONFIGURATION
