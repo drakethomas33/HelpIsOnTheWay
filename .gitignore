@@ -7,6 +7,9 @@
 # Sphinx docs:
 build
 
+#media
+media
+
 # SQLite3 database files:
 *.db
 
