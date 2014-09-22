@@ -53,5 +53,5 @@ AWS_ACCESS_KEY_ID = get_env_variable('AMAZON_S3_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = get_env_variable('AMAZON_S3_SECRET_KEY')
 AWS_STORAGE_BUCKET_NAME = get_env_variable('AMAZON_S3_BUCKET')
 AWS_PRELOAD_METADATA = True # necessary to fix manage.py collectstatic command to only upload changed files instead of all files
-STATIC_URL = ('https://s3-eu-west-1.amazonaws.com/%s/' % get_env_variable('AMAZON_S3_BUCKET')) # TODO: annoyingly collectstatic fails on EU buckets, only US standard works. Solution?!
+STATIC_URL = ('https://s3.amazonaws.com/%s/' % get_env_variable('AMAZON_S3_BUCKET')) # TODO: annoyingly collectstatic fails on EU buckets, only US standard works. Solution?!
 ADMIN_MEDIA_PREFIX = ('https://s3.amazonaws.com/%s/admin' % get_env_variable('AMAZON_S3_BUCKET'))
