@@ -9,7 +9,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
-    url(r'^about/$', TemplateView.as_view(template_name='about.html'), name="about"),
+    url(r'^why-you-need-help/$', TemplateView.as_view(template_name='why.html'), name="why"),
+    url(r'^ask-dr-jay/$', TemplateView.as_view(template_name='ask.html'), name="ask"),
+    url(r'^contact/$', TemplateView.as_view(template_name='contact.html'), name="contact"),
 
     # Examples:
     # url(r'^$', 'project.views.home', name='home'),

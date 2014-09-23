@@ -37,6 +37,18 @@
     s.parentNode.insertBefore(wf, s);
   })();
   </script>
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44230933-3', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!-- End Google Analytics -->
 </head>
 
 <body>
@@ -45,7 +57,7 @@
   <div class="container">
 
     <div class="logo  pull-left">
-      <a href="index.html"><img src="{% static 'img/logo.png' %}" alt="Logo" style="padding-top:5px; padding-bottom:5px; padding-right:5px"></a>
+      <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Logo" style="padding-top:5px; padding-bottom:5px; padding-right:5px"></a>
     </div>
 
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,28 +77,12 @@
     <ul class="navigation">
 
 
-      <li class="dropdown  active">
-        <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-
-        <ul class="navigation__dropdown">
-
-          <li><a href="index.html">Home (Sidebar)</a></li>
-
-          <li><a href="home-slider.html">Home (Slider)</a></li>
-
-          <li><a href="home-multi-columns.html">Home (Multi Columns)</a></li>
-
-          <li><a href="home-ads.html">Home (With Ads)</a></li>
-
-          <li><a href="home-no-sidebar.html">Home (No Sidebar)</a></li>
-
-          <li><a href="home-full-width.html">Home (Full Width)</a></li>
-
-        </ul>
-
+      <li class="active">
+        <a href="{% url 'home' %}" class="dropdown-toggle" data-toggle="dropdown">Home</a>
       </li>
 
 
+      <!-- PROBABLY USE LATER FOR LESSONS
       <li class="dropdown">
         <a href="single-post.html" class="dropdown-toggle" data-toggle="dropdown">Post formats</a>
 
@@ -105,36 +101,31 @@
         </ul>
 
       </li>
-
+      -->
 
       <li class="">
-        <a href="elements.html" class="dropdown-toggle" data-toggle="dropdown">Elements</a>
-
+        <a href="{% url 'why' %}" class="dropdown-toggle" data-toggle="dropdown">Why you need help</a>
       </li>
 
+       <!-- NOT SURE HOW TO HANDLE THIS YET
+      <li class="dropdown">
+        <a href="features.html" class="dropdown-toggle" data-toggle="dropdown">Lessons</a>
+      </li>
+      -->
 
       <li class="">
-        <a href="features.html" class="dropdown-toggle" data-toggle="dropdown">Features</a>
-
+        <a href="{% url 'ask' %}" class="dropdown-toggle" data-toggle="dropdown">Ask Dr. Jay</a>
       </li>
 
-
       <li class="">
-        <a href="about-us.html" class="dropdown-toggle" data-toggle="dropdown">About</a>
-
-      </li>
-
-
-      <li class="">
-        <a href="contact.html" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
-
+        <a href="{% url 'contact' %}" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
       </li>
 
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
 
-
+    <!--
     <div class="hidden-xs  hidden-sm">
       <a href="#" class="search__container  js--toggle-search-mode">
         <span class="glyphicon  glyphicon-search"></span>
@@ -149,7 +140,7 @@
         </ul>
       </div>
     </div>
-
+    -->
   </div>
 </header>
 
@@ -246,11 +237,11 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12  col-sm-6">
-        <a href="http://themeforest.net/item/readable-blog-template-focused-on-readability/7499064?ref=ProteusThemes">Readable</a> HTML Template © Copyright 2014.
+        Help is on the way © Copyright 2014.
       </div>
       <div class="col-xs-12  col-sm-6">
         <div class="copyrights--right">
-          Made by <a href="http://proteusthemes.com" target="_blank">ProteusThemes</a>.
+          Made by Dr. Jay.
         </div>
       </div>
     </div>
