@@ -14,6 +14,7 @@
   <!-- Custom styles for this template -->
   <!-- build:css stylesheets/main.css -->
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'css/help.css' %}" rel="stylesheet">
   <!-- endbuild -->
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -162,6 +163,8 @@
     <div class="col-xs-12  col-md-8">{% block left_column %}{% endblock %}</div>
     <div class="col-xs-12  col-md-4">
 
+
+{% block right_column %}
         <!-- Widget author -->
 <div class="widget-author  boxed  push-down-30">
   <div class="widget-author__image-container">
@@ -178,6 +181,7 @@
   </div>
 </div>
 
+{% endblock %}
     </div>
   </div>
 </div>

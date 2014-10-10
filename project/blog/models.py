@@ -15,3 +15,13 @@ class Article(models.Model):
     content = models.TextField()
     status = StatusField()
     published_at = MonitorField(monitor='status', when=['published'])
+
+
+class Question(models.Model):
+    STATUS = Choices('draft', 'published')
+
+    name = models.CharField(max_length=128)
+    email = models.EmailField(blank=True, null=True)
+    question = models.TextField()
+    response = models.TextField()
+    status = StatusField()
