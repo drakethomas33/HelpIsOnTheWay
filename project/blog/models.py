@@ -21,7 +21,10 @@ class Question(models.Model):
     STATUS = Choices('draft', 'published')
 
     name = models.CharField(max_length=128)
+    title = models.CharField(max_length=128, blank=True)
+    subtitle = models.CharField(max_length=128, blank=True)
     email = models.EmailField(blank=True, null=True)
     question = models.TextField()
-    response = models.TextField()
+    response = models.TextField(blank=True, null=True)
     status = StatusField()
+    published_at = MonitorField(monitor='status', when=['published'])

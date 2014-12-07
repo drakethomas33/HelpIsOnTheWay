@@ -8,7 +8,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
+    url(r'^$', 'project.blog.views.home', name="home"),
     url(r'^why-you-need-help/$', TemplateView.as_view(template_name='why.html'), name="why"),
     url(r'^ask-dr-jay/$', 'project.blog.views.ask', name="ask"),
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html'), name="contact"),
