@@ -5,7 +5,7 @@
 <div class="boxed  push-down-45">
   <!-- Featured image and meta start -->
   <div class="meta">
-    <img class="wp-post-image" src="{{article.image.url}}" alt="Blog image" height="324">
+    <img class="wp-post-image" src="{{article.image.url}}" alt="Blog image" width="748" height="324">
     <div class="meta__container">
       <div class="row">
         <div class="col-xs-12  col-sm-8">
@@ -30,9 +30,10 @@
       <div class="post-content--front-page">
         <h2 class="front-page-title"><a href="single-post.html">{{article.title}}</a></h2>
         <h3>{{article.subtitle}}</h3>
-        <p>{{article.teaser}}</p>
+        <p>{{article.teaser|safe}}</p>
       </div>
       <!-- End of the content -->
+      <!--
       <a href="single-post.html">
         <div class="read-more">
           Continue reading
@@ -41,6 +42,7 @@
           </div>
         </div>
       </a>
+      -->
     </div>
   </div>
 </div>
