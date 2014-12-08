@@ -78,7 +78,7 @@
     <ul class="navigation">
 
 
-      <li class="active">
+      <li id="li-home">
         <a href="{% url 'home' %}" class="dropdown-toggle" data-toggle="dropdown">Home</a>
       </li>
 
@@ -104,7 +104,7 @@
       </li>
       -->
 
-      <li class="">
+      <li id="li-why">
         <a href="{% url 'why' %}" class="dropdown-toggle" data-toggle="dropdown">Why you need help</a>
       </li>
 
@@ -114,7 +114,7 @@
       </li>
       -->
 
-      <li class="">
+      <li id="li-ask">
         <a href="{% url 'ask' %}" class="dropdown-toggle" data-toggle="dropdown">Ask Dr. Jay</a>
       </li>
       <!--
@@ -257,8 +257,9 @@
 
 
   <script data-main="scripts/main" src="{% static 'js/require.js' %}"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-
+  {% block extrajs %}{% endblock %}
   <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'readablehtml'; // required: replace example with your forum shortname
