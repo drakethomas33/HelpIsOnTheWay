@@ -10,6 +10,7 @@ def home(request):
 
 
 def ask(request):
+    thank_you = False
     if request.method == "POST":
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -21,7 +22,9 @@ def ask(request):
             email=email,
             question=question,
         )
+        thank_you = True
     context = {
-        "published_questions": Question.objects.filter(status="published")
+        "published_questions": Question.objects.filter(status="published"),
+        "thank_you": thank_you
     }
     return render_to_response("ask.html", RequestContext(request, context))
