@@ -31,7 +31,9 @@
       <!-- Start of the content -->
       <div class="post-content--front-page">
         <h2 class="front-page-title"><a href="single-post.html">{{article.title}}</a></h2>
-        <h3>{{article.subtitle}}</h3>
+        {% if article.subtitle %}
+          <h3>{{article.subtitle}}</h3>
+        {% endif %}
         <p>{{article.teaser|safe}}</p>
       </div>
       <!-- End of the content -->

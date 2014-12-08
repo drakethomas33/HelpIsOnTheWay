@@ -11,8 +11,8 @@ class Article(models.Model):
     title = models.CharField(max_length=128)
     subtitle = models.CharField(max_length=128, blank=True)
     image = models.ImageField(upload_to='img')
-    teaser = models.TextField(blank=True)
-    content = models.TextField()
+    teaser = models.TextField()
+    content = models.TextField(blank=True)
     status = StatusField()
     published_at = MonitorField(monitor='status', when=['published'])
 
