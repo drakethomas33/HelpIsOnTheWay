@@ -5,7 +5,7 @@ from .models import Question, Article
 
 
 def home(request):
-    context = {"articles": Article.objects.filter(status="published")}
+    context = {"articles": Article.objects.filter(status="published").order_by('published_at')}
     return render_to_response("index.html", RequestContext(request, context))
 
 
