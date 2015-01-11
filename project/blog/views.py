@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.views.generic import DetailView
 
 from .models import Question, Article
 
@@ -28,3 +29,8 @@ def ask(request):
         "thank_you": thank_you
     }
     return render_to_response("ask.html", RequestContext(request, context))
+
+
+class ArticleDetail(DetailView):
+    template_name = 'article_detail.html'
+    model = Article

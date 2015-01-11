@@ -37,8 +37,7 @@
         <p>{{article.teaser|safe}}</p>
       </div>
       <!-- End of the content -->
-      <!--
-      <a href="single-post.html">
+      <a href="{% url 'article-detail' article.id %}">
         <div class="read-more">
           Continue reading
           <div class="read-more__arrow">
@@ -46,7 +45,6 @@
           </div>
         </div>
       </a>
-      -->
     </div>
   </div>
 </div>

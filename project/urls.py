@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, include, url
-from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic import TemplateView
+
+from project.blog.views import ArticleDetail
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -9,6 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'project.blog.views.home', name="home"),
+    url(r'^article/(?P<pk>\d)/$', ArticleDetail.as_view(), name="article-detail"),
     url(r'^why-you-need-help/$', TemplateView.as_view(template_name='why.html'), name="why"),
     url(r'^ask-dr-jay/$', 'project.blog.views.ask', name="ask"),
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html'), name="contact"),
