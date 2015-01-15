@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% block extrahead %}
+<meta property="og:image" content="{% static 'img/dr-jay-avatar.png' %}"/>
+<meta property="og:image:type" content="image/png" />
+<meta property="og:url" content="http://www.helpisontheway.co.uk/question/{{question.slug}}/"/>
+<meta property="og:title" content="Help Is On The Way - {{question.title}}"/>
+<meta property="og:description" content="Self Help for the Rest of Us - {{question.subtitle}}"/>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -41,7 +47,7 @@
         <!-- Start of the blogpost -->
         <div class="row">
           <div class="col-xs-10  col-xs-offset-1  col-md-8  col-md-offset-2  push-down-60">
-          <div class="fb-share-button" data-href="http://www.helpisontheway.co.uk/question/" data-layout="button_count"></div>
+          <div class="fb-share-button" data-href="http://www.helpisontheway.co.uk/question/{{question.slug}}/" data-layout="button_count"></div>
           <hr />
             <!-- Start of the content -->
             <div class="post-content">
