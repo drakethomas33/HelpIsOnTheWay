@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block extrahead %}
-<meta property="og:image" content="{% static 'img/dr-jay-avatar.png' %}"/>
+<meta property="og:image" content="{{question.main_image.url}}"/>
 <meta property="og:image:type" content="image/png" />
 <meta property="og:url" content="http://www.helpisontheway.co.uk/question/{{question.slug}}/"/>
-<meta property="og:title" content="Help Is On The Way - {{question.title}}"/>
-<meta property="og:description" content="Self Help for the Rest of Us - {{question.subtitle}}"/>
+<meta property="og:title" content="{{question.title}}"/>
+<meta property="og:description" content="{{question.subtitle}}"/>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
