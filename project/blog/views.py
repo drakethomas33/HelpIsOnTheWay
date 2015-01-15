@@ -34,3 +34,8 @@ def ask(request):
 class ArticleDetail(DetailView):
     template_name = 'article_detail.html'
     model = Article
+
+
+class QuestionDetail(DetailView):
+    template_name = 'question_detail.html'
+    model = Question

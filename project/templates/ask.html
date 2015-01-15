@@ -48,15 +48,13 @@
             {{question.response|safe}}
           </div>
           <!-- End of the content -->
-          <a href="single-post.html">
-      <!--
+    <a href="{% url 'question-detail' question.id %}">
       <div class="read-more">
         Continue reading
         <div class="read-more__arrow">
           <span class="glyphicon  glyphicon-chevron-right"></span>
         </div>
       </div>
-      -->
     </a>
         </div>
       </div>
