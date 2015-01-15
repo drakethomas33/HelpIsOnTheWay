@@ -23,6 +23,7 @@ class Question(models.Model):
     name = models.CharField(max_length=128)
     title = models.CharField(max_length=128, blank=True)
     subtitle = models.CharField(max_length=128, blank=True)
+    main_image = models.ImageField(upload_to='img', blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     question = models.TextField()
     response = models.TextField(blank=True, null=True)
