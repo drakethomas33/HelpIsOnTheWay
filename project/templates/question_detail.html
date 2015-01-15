@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
+{% block extrahead %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% endblock %}
+
       {% block container %}
       <div class="boxed  push-down-60">
 
@@ -10,14 +21,16 @@
               <div class="col-xs-12  col-sm-8">
                 <div class="meta__info">
                   <!--<span class="meta__author"><img src="images/dummy/about-5.jpg" alt="Meta avatar" width="30" height="30"> <a href="#">Danielle Thatcher</a>  in <a href="#">News</a> </span>-->
-                  <span class="meta__date"><span class="glyphicon glyphicon-calendar"></span> &nbsp; {{article.published_at.date}}</span>
+                  <span class="meta__date"><span class="glyphicon glyphicon-calendar"></span> &nbsp; {{question.published_at.date}}</span>
                 </div>
               </div>
               <div class="col-xs-12  col-sm-4">
+                <!--
                 <div class="meta__comments">
                   <span class="glyphicon glyphicon-comment"></span>  &nbsp;
                   <a href="single-post.html#disqus_thread"></a>
                 </div>
+                -->
               </div>
             </div>
           </div>
@@ -28,7 +41,8 @@
         <!-- Start of the blogpost -->
         <div class="row">
           <div class="col-xs-10  col-xs-offset-1  col-md-8  col-md-offset-2  push-down-60">
-
+          <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
+          <hr />
             <!-- Start of the content -->
             <div class="post-content">
           <p><em>{{question.question}}</em></p>

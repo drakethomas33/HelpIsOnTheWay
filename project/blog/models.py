@@ -20,6 +20,7 @@ class Article(models.Model):
 class Question(models.Model):
     STATUS = Choices('draft', 'published')
 
+    slug = models.CharField(max_length=54)
     name = models.CharField(max_length=128)
     title = models.CharField(max_length=128, blank=True)
     subtitle = models.CharField(max_length=128, blank=True)
