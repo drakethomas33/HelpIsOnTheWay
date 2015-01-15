@@ -31,13 +31,18 @@
 
             <!-- Start of the content -->
             <div class="post-content">
-              <h1>
-                <a href="#">{{article.title}}</a>
-              </h1>
-              {% if article.subtitle %}
-                <h3>{{article.subtitle}}</h3>
-              {% endif %}
-              <p>{{article.teaser|safe}}</p>
+          <p><em>{{question.question}}</em></p>
+          <p>- {{question.name}}</p>
+          <hr />
+            <!--<h2 class="front-page-title"><a href="single-post-without-image.html">{{question.title}}</a></h2>-->
+            <!--<h3>{{question.subtitle}}</h3>-->
+            <!--
+              <blockquote class="blockquote__alternative">
+                {{question.question}}
+                <p><br>- {{question.name}}</p>
+              </blockquote>
+            -->
+            {{question.response|safe}}
             </div>
         </div>
       </div>
