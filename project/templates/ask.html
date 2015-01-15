@@ -3,7 +3,7 @@
 {% block left_column %}
   {% for question in published_questions %}
     <!-- Post without featured image -->
-    <div class="boxed  push-down-45">
+    <div class="boxed">
       <!-- Meta without image start (Needed for WP theme)-->
       <div class="meta">
         <div class="row">
@@ -42,7 +42,7 @@
           </div>
 
           <!-- End of the content -->
-          <a href="single-post.html">
+          <a href="{% url 'question-detail' question.id %}">
             <div class="read-more">
               Continue reading
               <div class="read-more__arrow">
