@@ -3,31 +3,7 @@
 {% block left_column %}
   {% for question in published_questions %}
     <!-- Post without featured image -->
-    <div class="boxed">
-      <!-- Meta without image start (Needed for WP theme)-->
-      <div class="meta">
-        <div class="row">
-          <div class="col-xs-12  col-sm-10  col-sm-offset-1">
-            <div class="meta__container--without-image">
-              <div class="row">
-                <div class="col-xs-12  col-sm-8">
-                  <div class="meta__info">
-                    <!--<span class="meta__author"><img src="images/dummy/about-5.jpg" alt="Meta avatar" width="30" height="30"> <a href="#">Danielle Thatcher</a> in <a href="#">News</a></span>-->
-                    <span class="meta__date"><span class="glyphicon glyphicon-calendar"></span> &nbsp; {{question.published_at.date}}</span>
-                  </div>
-                </div>
-                <!--
-                <div class="col-xs-12  col-sm-4">
-                  <div class="meta__comments">
-                    <span class="glyphicon glyphicon-comment"></span> &nbsp; <a href="single-post-without-image.html#disqus_thread"></a>
-                  </div>
-                </div>
-                -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="boxed  push-down-30">
       <!-- Meta without image end -->
       <!-- Start of the blogpost -->
       <div class="row">
@@ -42,7 +18,7 @@
           </div>
 
           <!-- End of the content -->
-          <a href="{% url 'question-detail' question.id %}">
+          <a href="{% url 'question-detail' question.slug %}">
             <div class="read-more">
               Continue reading
               <div class="read-more__arrow">
