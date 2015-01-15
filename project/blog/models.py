@@ -8,6 +8,7 @@ from django.templatetags.static import static
 class Article(models.Model):
     STATUS = Choices('draft', 'published')
 
+    slug = models.CharField(max_length=54)
     title = models.CharField(max_length=128)
     subtitle = models.CharField(max_length=128, blank=True)
     image = models.ImageField(upload_to='img')

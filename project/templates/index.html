@@ -30,7 +30,7 @@
     <div class="col-xs-10  col-xs-offset-1">
       <!-- Start of the content -->
       <div class="post-content--front-page">
-        <h2 class="front-page-title"><a href="single-post.html">{{article.title}}</a></h2>
+        <h2 class="front-page-title"><a href="{% url 'article-detail' article.id %}">{{article.title}}</a></h2>
         {% if article.subtitle %}
           <h3>{{article.subtitle}}</h3>
         {% endif %}
