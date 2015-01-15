@@ -12,7 +12,7 @@
           <!-- Start of the content -->
           <div class="post-content--front-page">
             <h2>
-              <a href="single-post.html">{{question.title}}</a>
+              <a href="{% url 'question-detail' question.slug %}">{{question.title}}</a>
             </h2>
             <h3 class="search-subtitle">{{question.subtitle}}</h3>
           </div>
