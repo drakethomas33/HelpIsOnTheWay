@@ -32,30 +32,24 @@
       <!-- Start of the blogpost -->
       <div class="row">
         <div class="col-xs-10  col-xs-offset-1">
+
           <!-- Start of the content -->
           <div class="post-content--front-page">
-          <p><em>{{question.question}}</em></p>
-          <p>- {{question.name}}</p>
-          <hr />
-            <!--<h2 class="front-page-title"><a href="single-post-without-image.html">{{question.title}}</a></h2>-->
-            <!--<h3>{{question.subtitle}}</h3>-->
-            <!--
-              <blockquote class="blockquote__alternative">
-                {{question.question}}
-                <p><br>- {{question.name}}</p>
-              </blockquote>
-            -->
-            {{question.response|safe}}
+            <h2>
+              <a href="single-post.html">{{question.title}}</a>
+            </h2>
+            <h3 class="search-subtitle">{{question.subtitle}}</h3>
           </div>
+
           <!-- End of the content -->
-    <a href="{% url 'question-detail' question.slug %}">
-      <div class="read-more">
-        Continue reading
-        <div class="read-more__arrow">
-          <span class="glyphicon  glyphicon-chevron-right"></span>
-        </div>
-      </div>
-    </a>
+          <a href="single-post.html">
+            <div class="read-more">
+              Continue reading
+              <div class="read-more__arrow">
+                <span class="glyphicon  glyphicon-chevron-right"></span>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
