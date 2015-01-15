@@ -3,7 +3,7 @@
 <meta property="og:image" content="{{article.image.url}}"/>
 <meta property="og:url" content="http://www.helpisontheway.co.uk/article/{{article.slug}}/"/>
 <meta property="og:title" content="{{article.title}}"/>
-<meta property="og:description" content="{{article.teaser}}"/>
+<meta property="og:description" content="{{article.teaser|safe|striptags}}"/>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -50,9 +50,7 @@
           <hr />
             <!-- Start of the content -->
             <div class="post-content">
-              <h1>
-                <a href="#">{{article.title}}</a>
-              </h1>
+              <h1>{{article.title}}</h1>
               {% if article.subtitle %}
                 <h3>{{article.subtitle}}</h3>
               {% endif %}
