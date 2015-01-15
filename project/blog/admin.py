@@ -8,7 +8,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'subtitle', 'name', 'question']
+    list_display = ['slug', 'title', 'subtitle', 'name', 'question']
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Question, QuestionAdmin)
