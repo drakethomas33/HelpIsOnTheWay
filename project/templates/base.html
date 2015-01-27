@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="Dr. Jay">
-  <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
 
   <title>Help Is On The Way - Self Help for the Rest of Us</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
   <!-- Custom styles for this template -->
   <!-- build:css stylesheets/main.css -->
@@ -72,7 +74,7 @@
       </button>
     </div>
 
-
+{% comment %}
 <nav class="navbar  navbar-default" role="navigation">
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse  navbar-collapse" id="readable-navbar-collapse">
@@ -103,20 +105,22 @@
 
       </li>
       -->
-
+      <!--
       <li id="li-why">
         <a href="{% url 'why' %}" class="dropdown-toggle" data-toggle="dropdown">Why you need help</a>
       </li>
-
+      -->
        <!-- NOT SURE HOW TO HANDLE THIS YET
       <li class="dropdown">
         <a href="features.html" class="dropdown-toggle" data-toggle="dropdown">Lessons</a>
       </li>
       -->
 
+      <!--
       <li id="li-ask">
         <a href="{% url 'ask' %}" class="dropdown-toggle" data-toggle="dropdown">Ask Dr. Jay</a>
       </li>
+      -->
       <!--
       <li class="">
         <a href="{% url 'contact' %}" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
@@ -126,6 +130,7 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
+{% endcomment %}
 
     <!--
     <div class="hidden-xs  hidden-sm">
@@ -166,24 +171,7 @@
     <div class="col-xs-12  col-md-4">
 
 
-{% block right_column %}
-        <!-- Widget author -->
-<div class="widget-author  boxed  push-down-30">
-  <div class="widget-author__image-container">
-    <div class="widget-author__avatar--blurred">
-      <img src="{% static 'img/dr-jay-avatar.png' %}" alt="Avatar image" width="90" height="90">
-    </div>
-    <img class="widget-author__avatar" src="{% static 'img/dr-jay-avatar.png' %}" alt="Avatar image" width="90" height="90">
-  </div>
-  <div class="row">
-    <div class="col-xs-10  col-xs-offset-1">
-      <h4>Dr. Jay Ferguson</h4>
-      <p>The only friend you need.</p>
-    </div>
-  </div>
-</div>
-
-{% endblock %}
+{% block right_column %}{% endblock right_column %}
     </div>
   </div>
   {% endblock %}
@@ -258,6 +246,8 @@
 </footer>
 
   <script data-main="scripts/main" src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.cookie.js' %}"></script>
 
   {% block extrajs %}{% endblock %}
   <script type="text/javascript">
