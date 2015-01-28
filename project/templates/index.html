@@ -180,12 +180,7 @@
 {% block extrajs %}
 <script>
 $(document).ready(function(){
-  console.log($.cookie("seen_dr_jay_modal"));
-  if (!$.cookie("seen_dr_jay_modal")) {
-    $('#subscribe-modal').modal('show');
-    $.cookie("seen_dr_jay_modal", "1", {expires: 9999});
-  }
+  $('#li-home').addClass('active')
 });
-$('#li-home').addClass('active')
 </script>
 {% endblock %}

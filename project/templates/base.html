@@ -248,7 +248,14 @@
   <script data-main="scripts/main" src="{% static 'js/main.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/jquery.cookie.js' %}"></script>
-
+  <script>
+  $(document).ready(function(){
+    if (!$.cookie("seen_dr_jay_modal")) {
+      $('#subscribe-modal').modal('show');
+      $.cookie("seen_dr_jay_modal", "1", {expires: 9999});
+    }
+  })
+  </script>
   {% block extrajs %}{% endblock %}
   <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
