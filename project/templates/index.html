@@ -1,60 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block extrahead %}
-<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-{% endblock extrahead %}
-
 {% block left_column %}
-
-<div id="subscribe-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">You won't regret this!</h4>
-      </div>
-      <div class="modal-body">
-
-        <p style="font-size: 12pt;">I know pop-ups are annoying, but <strong>this is for your own good!</strong></p>
-        <h3>Step 1: Follow me on Twitter</h2>
-        <div style="padding-left:20px">
-        <a href="https://twitter.com/DrJayCanHelp" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @DrJayCanHelp</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </div>
-
-        <h3>Step 2: Sign up to my mailing list</h3>
-        <!-- Begin MailChimp Signup Form -->
-        <div id="mc_embed_signup">
-        <form action="//helpisontheway.us9.list-manage.com/subscribe/post?u=f8f2ea587ec1afcaf97aebc71&amp;id=708c29a51b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-          <label for="mce-EMAIL">Help straight to your inbox</label>
-          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f8f2ea587ec1afcaf97aebc71_708c29a51b" tabindex="-1" value=""></div>
-            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-            </div>
-        </form>
-        </div>
-        <!--End mc_embed_signup-->
-
-        <h3>Step 3: Receive at least &pound;10*</h3>
-        <p>*&pound;10 worth of free flowing advice at your fingertips</p>
-      </div>
-      <!--
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-      -->
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 {% for article in articles %}
 <!-- Post with featured image -->
