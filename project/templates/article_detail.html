@@ -1,18 +1,12 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block extrahead %}
 <meta property="og:image" content="{{article.image.url}}"/>
 <meta property="og:url" content="http://www.helpisontheway.co.uk/article/{{article.slug}}/"/>
 <meta property="og:title" content="{{article.title}}"/>
 <meta property="og:description" content="{{article.teaser|safe|striptags}}"/>
+<link rel="stylesheet" href="{% static 'css/rrssb.css' %}" />
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 {% endblock %}
 
       {% block container %}
@@ -46,7 +40,10 @@
         <!-- Start of the blogpost -->
         <div class="row">
           <div class="col-xs-10  col-xs-offset-1  col-md-8  col-md-offset-2  push-down-60">
-          <div class="fb-share-button" data-href="http://www.helpisontheway.co.uk/article/{{question.slug}}/" data-layout="button_count"></div>
+
+              {% include 'buttons.html' %}
+
+
           <hr style="margin-top:20px"/>
             <!-- Start of the content -->
             <div class="post-content">
@@ -56,7 +53,25 @@
               {% endif %}
               <p>{{article.content|safe}}</p>
             </div>
+
         </div>
       </div>
       </div>
       {% endblock container %}
+
+{% block extrajs %}
+<script src="{% static 'js/rrssb.min.js' %}"></script>
+<script>
+  $(document).ready(function(){
+    $('.fb-link').click(function(){
+      ga('send', 'event', 'button', 'click', 'FB Share', {'page': '/article/{{article.slug}}/'});
+    });
+    $('.twitter-link').click(function(){
+      ga('send', 'event', 'button', 'click', 'Twitter Share', {'page': '/article/{{article.slug}}/'});
+    });
+    $('.email-link').click(function(){
+      ga('send', 'event', 'button', 'click', 'Email Share', {'page': '/article/{{article.slug}}/'});
+    })
+  })
+</script>
+{% endblock %}

@@ -5,19 +5,16 @@
 <meta property="og:url" content="http://www.helpisontheway.co.uk/question/{{question.slug}}/"/>
 <meta property="og:title" content="{{question.title}}"/>
 <meta property="og:description" content="{{question.subtitle}}"/>
+<link rel="stylesheet" href="{% static 'css/rrssb.css' %}" />
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
 {% endblock %}
 
       {% block container %}
       <div class="boxed  push-down-60">
+
+
+
 
         <!-- Featured image and meta start -->
         <div class="meta">
@@ -47,8 +44,10 @@
         <!-- Start of the blogpost -->
         <div class="row">
           <div class="col-xs-10  col-xs-offset-1  col-md-8  col-md-offset-2  push-down-60">
-          <div class="fb-share-button" data-href="http://www.helpisontheway.co.uk/question/{{question.slug}}/" data-layout="button_count"></div>
           <hr />
+
+
+
             <!-- Start of the content -->
             <div class="post-content">
           <p><em>{{question.question}}</em></p>
@@ -68,3 +67,8 @@
       </div>
       </div>
       {% endblock container %}
+
+{% block extrajs %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static 'js/rrssb.min.js' %}"></script>
+{% endblock %}

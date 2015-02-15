@@ -7,6 +7,8 @@ from os import environ
 from .base import *
 
 
+GOOGLE_ANALYTICS_KEY = 'UA-44230933-3'  # test property
+
 ########## HOST CONFIGURATION
 # See: https://docs.djangoproject.com/en/1.5/releases/1.5/#allowed-hosts-required-in-production
 ALLOWED_HOSTS = ['www.helpisontheway.co.uk', 'helpisontheway.co.uk', 'help-is-on-the-way.herokuapp.com']

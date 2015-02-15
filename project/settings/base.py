@@ -16,6 +16,8 @@ def get_env_variable(var_name):
         raise ImproperlyConfigured(error_msg)
 
 
+GOOGLE_ANALYTICS_KEY = 'UA-44230933-6'  # test property
+
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
 SETTINGS_DIR = realpath(dirname(__file__))
@@ -149,6 +151,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    'project.blog.context_processors.ga_key'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders

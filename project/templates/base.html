@@ -55,7 +55,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-44230933-3', 'auto');
+    ga('create', '{{ga_key}}', 'auto');
     ga('send', 'pageview');
 
   </script>
@@ -185,7 +185,7 @@
         <ul class="social__dropdown">
           <!--<li><a href="https://www.facebook.com/ProteusThemes" target="_blank" class="social__container"><span class="zocial-facebook"></span></a></li>-->
           <li>
-            <a class="social__container" href="https://twitter.com/intent/follow?screen_name=DrJayCanHelp"><span class="zocial-twitter"></span></a>
+            <a id="twitter-follow-button" class="social__container" href="https://twitter.com/intent/follow?screen_name=DrJayCanHelp"><span class="zocial-twitter"></span></a>
           </li>
         </ul>
       </div>
@@ -276,7 +276,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12  col-sm-6">
-        Help is on the way © Copyright 2014.
+        Help is on the way © Copyright 2015.
       </div>
       <div class="col-xs-12  col-sm-6">
         <div class="copyrights--right">
@@ -292,10 +292,23 @@
 <script src="{% static 'js/jquery.cookie.js' %}"></script>
 <script>
   $(document).ready(function(){
+
+    // Bind ga event to clicks on Twitter time-line widget or follow button in top-right
+    twttr.events.bind(
+      'click',
+      function (ev) {
+        ga('send', 'event', 'button', 'click', 'Twitter click');
+      }
+    );
+
+    // Pop up the subscribe modal after 15 seconds if not already seen
     if (!$.cookie("seen_subscribe_modal")) {
-      $('#subscribe-modal').modal('show');
-      $.cookie("seen_subscribe_modal", "1", {expires: 9999});
+      setTimeout(function(){
+        $('#subscribe-modal').modal('show');
+        $.cookie("seen_subscribe_modal", "1", {expires: 9999});
+      }, 15000)
     }
+
     $('#subscribe-form').submit(function(e){
       e.preventDefault();
       var data = {"email": $('#email-input').val()};
@@ -309,11 +322,11 @@
           xhr.setRequestHeader("X-CSRFToken", csrftoken);
         },
         success: function(data) {
-          $('#subscribe-modal-title').html("Hooray!")
+          ga('send', 'event', 'button', 'click', 'Subscribe');
+          $('#subscribe-modal-title').html("Hooray!");
           $('#subscribe-modal-body').html('<p>Help is on the way!</p>');
         },
         error: function(data) {
-          console.log(data);
           $('#subscribe-modal-title').html("Oh no! Something went wrong");
           $('#subscribe-modal-body').html('<p>' + data.responseText + '</p>');
         }
