@@ -11,7 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', 'project.blog.views.home', name="home"),
     url(r'^article/(?P<slug>[-\w\d]+)/$', ArticleDetail.as_view(), name="article-detail"),
-    url(r'^question/(?P<slug>[-\w\d]+)/$', QuestionDetail.as_view(), name="question-detail"),
+    #url(r'^question/(?P<slug>[-\w\d]+)/$', QuestionDetail.as_view(), name="question-detail"),
     #url(r'^why-you-need-help/$', TemplateView.as_view(template_name='why.html'), name="why"),
     #url(r'^contact/$', TemplateView.as_view(template_name='contact.html'), name="contact"),
     url(r'^api/subscribe/$', 'project.blog.views.subscribe', name="subscribe"),
