@@ -75,13 +75,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 id="subscribe-modal-title" class="modal-title">You need help!</h4>
+        <h4 id="subscribe-modal-title" class="modal-title">Subscribe today and Dr. Jay will thank you personally!</h4>
       </div>
       <div id="subscribe-modal-body" class="modal-body">
-        <p>Subscribe to Dr. Jay's mailing list!</p>
         <div class="form-group form-inline">
           <form id="subscribe-form" action=".">
-            <input id="email-input" type="email" class="form-control" id="mce-EMAIL" placeholder="email address" required>
+            <input type="email" class="form-control" id="mce-EMAIL" placeholder="email address" required>
             <button id="subscribe-btn" class="btn btn-primary">Subscribe</button>
           </form>
         </div>
@@ -104,6 +103,7 @@
       <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Logo" style="padding-top:5px; padding-bottom:5px; padding-right:5px"></a>
     </div>
 
+    {% comment %}
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#readable-navbar-collapse">
@@ -113,15 +113,15 @@
         <span class="icon-bar"></span>
       </button>
     </div>
+    {% endcomment %}
 
-{% comment %}
-<nav class="navbar  navbar-default" role="navigation">
+<nav class="navbar  navbar-default pull-right" role="navigation">
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse  navbar-collapse" id="readable-navbar-collapse">
     <ul class="navigation">
 
-      <li id="li-home">
-        <a href="{% url 'home' %}" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+      <li>
+        <a href="#" id="subscribe-link">Subscribe</a>
       </li>
 
 
@@ -147,7 +147,7 @@
       -->
       <!--
       <li id="li-why">
-        <a href="{% url 'why' %}" class="dropdown-toggle" data-toggle="dropdown">Why you need help</a>
+        <a href="" class="dropdown-toggle" data-toggle="dropdown">Why you need help</a>
       </li>
       -->
        <!-- NOT SURE HOW TO HANDLE THIS YET
@@ -158,19 +158,18 @@
 
       <!--
       <li id="li-ask">
-        <a href="{% url 'ask' %}" class="dropdown-toggle" data-toggle="dropdown">Ask Dr. Jay</a>
+        <a href="" class="dropdown-toggle" data-toggle="dropdown">Ask Dr. Jay</a>
       </li>
       -->
       <!--
       <li class="">
-        <a href="{% url 'contact' %}" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
+        <a href="" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
       </li>
       -->
 
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-{% endcomment %}
 
     <div class="hidden-xs  hidden-sm">
     {% comment %}
@@ -301,17 +300,26 @@
       }
     );
 
+    $('#subscribe-link').click(function(){
+      ga('send', 'event', 'button', 'click', 'Subscribe click');
+      $('#subscribe-modal').modal('show');
+    });
+
+    $('#subscribe-modal').on('show.bs.modal', function(){
+      ga('send', 'event', 'modal', 'open', 'Subscribe modal');
+    });
+
     // Pop up the subscribe modal after 15 seconds if not already seen
     if (!$.cookie("seen_subscribe_modal")) {
       setTimeout(function(){
         $('#subscribe-modal').modal('show');
         $.cookie("seen_subscribe_modal", "1", {expires: 9999});
-      }, 15000)
+      }, 10000)
     }
 
     $('#subscribe-form').submit(function(e){
       e.preventDefault();
-      var data = {"email": $('#email-input').val()};
+      var data = {"email": $('#mce-EMAIL').val()};
       $.ajax({
         url: "{% url 'subscribe' %}",
         type: 'POST',
